@@ -6,7 +6,8 @@ from django.conf.urls import url
 
 
 class Customer(models.Model):
-	user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+	user = models.OneToOneField(
+		User, null=True, blank=True, on_delete=models.CASCADE)
 	name = models.CharField(max_length=200, null=True)
 	email = models.CharField(max_length=200, null=True)
 
@@ -82,7 +83,7 @@ class ShippingAddress(models.Model):
 	address = models.CharField(max_length=200, null=True)
 	city = models.CharField(max_length=200, null=True)
 	state = models.CharField(max_length=200, null=True)
-	zipcode=models.CharField(max_length=200, null=True)
+	zipcode = models.CharField(max_length=200, null=True)
 	date_added = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
